@@ -5,14 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')</title>
-
+  <link rel="stylesheet" href="{{ asset('assets/css/framework/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+  @yield('links')
 </head>
 
 <body>
-  <header>
-    <div class="logo">@yield('title')</div>
-  </header>
   <div class="sidebar">
     <ul>
       <li><a href="{{ route('dashboard.page') }}">Dashboard</a></li>
