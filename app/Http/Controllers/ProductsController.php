@@ -9,7 +9,12 @@ class ProductsController extends Controller
 {
     public function addProduct(Request $request)
     {
-        $products = $request->only('product_name', 'product_quantity');
+        $products = $request->validate(
+            [
+                'product_name' => 'required|min:2|string',
+                'product_quantity' => 'required|min:1|integer'
+            ]
+        );
 
         DB::table('products')->insertGetId(
             [
