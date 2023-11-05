@@ -29,3 +29,4 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout.user');
 
 Route::post('/manage/products', [ProductsController::class, 'addProduct'])->name('manage_products.add');
 Route::get('/manage/edit/product', [ProductsController::class, 'editProduct'])->name('edit_products.edit');
+Route::get('/manage/products/delete', [ProductsController::class, 'deleteProduct'])->name('manage_products.delete');

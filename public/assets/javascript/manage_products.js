@@ -10,4 +10,15 @@ $(document).ready(function() {
       }
     })
   })
+  // Delete Button
+  $('.delete_product').click(function() {
+    let productID = $(this).parent().siblings()[0].textContent
+    $.ajax({
+      success: function() {
+        console.log(this);
+
+        window.location.href = `/manage/products/delete?id=${productID}`;
+      }
+    })
+  })
 });

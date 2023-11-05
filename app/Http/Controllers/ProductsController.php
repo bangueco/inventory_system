@@ -37,4 +37,13 @@ class ProductsController extends Controller
 
         return redirect()->route('manage_products.page');
     }
+
+    public function deleteProduct(Request $request)
+    {
+        $productID = $request->only('id');
+
+        DB::table('products')->where('id', $productID['id'])->delete();
+
+        return redirect()->back();
+    }
 }
