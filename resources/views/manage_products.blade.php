@@ -3,7 +3,7 @@
 @section('title', 'Manage Products')
 
 @section('links')
-<link rel="stylesheet" href="{{ asset('assets/css/manage_products.css') }}">
+<!-- <link rel="stylesheet" href="{{ asset('assets/css/manage_products.css') }}"> -->
 @endsection
 
 @section('content')
@@ -31,6 +31,7 @@
   <table class="table table-bordered text-center">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Product Name</th>
         <th>Quantity</th>
         <th>Action</th>
@@ -43,13 +44,19 @@
 
       foreach($products as $product) {
       echo '<tr>';
+        echo '<td>' . $product->id . '</td>';
         echo '<td>' . $product->product_name . '</td>';
         echo '<td>' . $product->quantity . '</td>';
-        echo '<td><button>Edit</button><button>Delete</button></td>';
+        echo '<td><button class="edit_product">Edit</button><button class="delete_product">Delete</button></td>';
         echo '</tr>';
       }
       @endphp
     </tbody>
   </table>
 </div>
+@endsection
+
+@section('javascript')
+<script src="{{ asset('assets/javascript/libraries/jquery.min.js.js') }}"></script>
+<script src="{{ asset('assets/javascript/manage_products.js') }}"></script>
 @endsection
