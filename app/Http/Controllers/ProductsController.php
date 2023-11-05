@@ -25,4 +25,16 @@ class ProductsController extends Controller
 
         return redirect()->back();
     }
+
+    public function editProduct(Request $request)
+    {
+        $product = $request->only('productID', 'product_name', 'product_quantity');
+        DB::table('products')->where('id', $product['productID'])
+            ->update([
+                'product_name' => $product['product_name'],
+                'quantity' => $product['product_quantity']
+            ]);
+
+        return redirect()->route('manage_products.page');
+    }
 }
