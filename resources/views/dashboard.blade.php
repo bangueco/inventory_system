@@ -10,7 +10,7 @@
 
 @php
 $total_products = DB::table('products')->select('product_name')->groupBy('product_name')->get()->count();
-$total_items = DB::table('products')->selectRaw('SUM(quantity) as total_quantity')->get();
+$total_items = DB::table('products')->selectRaw('SUM(quantity), 0 as total_quantity')->get();
 @endphp
 <div class="statistics">
     <div class="statistics_card">
