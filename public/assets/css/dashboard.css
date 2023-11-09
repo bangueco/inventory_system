@@ -1,9 +1,9 @@
 .statistics > :nth-child(1) {
-  background-color: #3fd43d;
+  background-color: #5272F2;
 }
 
 .statistics > :nth-child(2) {
-  background-color: #f02f2f;
+  background-color: #FF0303;
 }
 
 .statistics {
@@ -21,4 +21,21 @@
   align-items: center;
   justify-content: center;
   border-radius: 25px;
+}
+
+thead, tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  font-size: 1.3rem;
+}
+
+tbody {
+  display: block;
+  height: 440px;
+  overflow: auto;
+  font-size: 1.2rem;
 }

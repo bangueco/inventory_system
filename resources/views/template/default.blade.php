@@ -11,17 +11,20 @@
 </head>
 
 <body>
-  <div class="sidebar">
-    <ul>
-      <li><a href="{{ route('dashboard.page') }}">Dashboard</a></li>
-      <li><a href="{{ route('manage_products.page') }}">Manage Products</a></li>
-      <li><a href="{{ route('logout.user') }}">Logout</a></li>
-    </ul>
+  <div class="body">
+    <div class="sidebar">
+      <ul>
+        <li><a href="{{ route('dashboard.page') }}">Dashboard</a></li>
+        <li><a href="{{ route('manage_products.page') }}">Manage Products</a></li>
+        <li><a href="#">Manage Accounts</a></li>
+        <li><a href="{{ route('logout.user') }}">Logout</a></li>
+      </ul>
+    </div>
+    <main class="container">
+      @yield('content')
+    </main>
+    @yield('javascript')
   </div>
-  <main>
-    @yield('content')
-  </main>
-  @yield('javascript')
 </body>
 
 </html>

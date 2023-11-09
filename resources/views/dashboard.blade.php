@@ -14,7 +14,7 @@ $total_items = DB::table('products')->selectRaw('COALESCE(SUM(quantity), 0) as t
 @endphp
 <div class="statistics">
     <div class="statistics_card">
-        <div class="title h1">Total Product:</div>
+        <div class="title h1">Total Products:</div>
         @php
         echo '<p class="text-white fw-bold">'. $total_products . ' products total' .'</p>';
         @endphp
@@ -27,14 +27,14 @@ $total_items = DB::table('products')->selectRaw('COALESCE(SUM(quantity), 0) as t
     </div>
 </div>
 <div class="container">
-    <table class="table table-secondary table-hover table-bordered table-responsive">
-        <thead class="table-success">
+    <table class="table table-striped table-hover table-bordered table-responsive">
+        <thead class="table-dark">
             <tr>
                 <th>Product Name</th>
                 <th>Quantity</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="table-secondary">
             @php
 
             $products = DB::table('products')

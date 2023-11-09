@@ -1,0 +1,16 @@
+thead, tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  font-size: 1.3rem;
+}
+
+tbody {
+  display: block;
+  height: 440px;
+  overflow: auto;
+  font-size: 1.2rem;
+}
