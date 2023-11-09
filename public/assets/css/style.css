@@ -44,8 +44,12 @@
   color: white;
 }
 
-.sidebar > ul > li > a:active {
+.sidebar > ul > li > a:hover {
   color: #5272F2;
+}
+
+.sidebar > ul > li > a:active {
+  color: #4d62b3;
 }
 
 main {
