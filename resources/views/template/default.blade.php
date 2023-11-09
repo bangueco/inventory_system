@@ -14,15 +14,17 @@
   <div class="body">
     <div class="sidebar">
       <ul>
-        <li><a href="{{ route('dashboard.page') }}">Dashboard</a></li>
-        <li><a href="{{ route('manage_products.page') }}">Manage Products</a></li>
-        <li><a href="#">Manage Accounts</a></li>
-        <li><a href="{{ route('logout.user') }}">Logout</a></li>
+        <li><a class="sidelink" href="{{ route('dashboard.page') }}">Dashboard</a></li>
+        <li><a class="sidelink" href="{{ route('manage_products.page') }}">Manage Products</a></li>
+        <li><a class="sidelink" href="#">Manage Accounts</a></li>
+        <li><a class="sidelink" href="{{ route('logout.user') }}">Logout</a></li>
       </ul>
     </div>
     <main class="container">
       @yield('content')
     </main>
+    <script src="{{ asset('assets/javascript/libraries/jquery.min.js.js') }}"></script>
+    <script src="{{ asset('assets/javascript/index.js') }}"></script>
     @yield('javascript')
   </div>
 </body>

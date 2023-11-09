@@ -57,6 +57,5 @@
 @endsection
 
 @section('javascript')
-<script src="{{ asset('assets/javascript/libraries/jquery.min.js.js') }}"></script>
 <script src="{{ asset('assets/javascript/manage_products.js') }}"></script>
 @endsection
