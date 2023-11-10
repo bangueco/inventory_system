@@ -24,6 +24,9 @@
                 <label class="form-label" for="password">Password: </label>
                 <input class="form-control form-control-sm-2" style="width: 400px;" type="text" name="password" id="password">
             </div>
+            @error('message')
+            <p class="text text-danger"> {{ $message }} </p>
+            @enderror
             <div class="col-sm-1">
                 <button class="btn btn-success">Login</button>
             </div>
