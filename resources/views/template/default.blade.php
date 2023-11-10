@@ -16,7 +16,7 @@
       <ul>
         <li><a class="sidelink" href="{{ route('dashboard.page') }}">Dashboard</a></li>
         <li><a class="sidelink" href="{{ route('manage_products.page') }}">Manage Products</a></li>
-        <li><a class="sidelink" href="#">Manage Accounts</a></li>
+        <li><a class="sidelink" href="{{ route('manage_accounts.page') }}">Manage Accounts</a></li>
         <li><a class="sidelink" href="{{ route('logout.user') }}">Logout</a></li>
       </ul>
     </div>

@@ -16,6 +16,11 @@ class PageController extends Controller
         return view('manage_products');
     }
 
+    public function viewManageAccounts()
+    {
+        return view('Authentication.manage_accounts');
+    }
+
     public function viewEditProducts()
     {
         return view('edit_products');
