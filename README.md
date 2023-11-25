@@ -39,7 +39,7 @@ php artisan key:generate
 <p>4. Migrate Database</p>
 
 ```
-php artisan migratate --seed
+php artisan migrate --seed
 ```
 
 <p>5. Deploy it on your localhost</p>
