@@ -18,5 +18,27 @@ class DatabaseSeeder extends Seeder
             'username' => 'admin',
             'password' => 'root',
         ]);
+
+        // For Products
+
+        \App\Models\Product::factory()->create([
+            'product_name' => 'Mouse',
+            'quantity' => 22,
+        ]);
+
+        \App\Models\Product::factory()->create([
+            'product_name' => 'Mouse',
+            'quantity' => 12,
+        ]);
+
+        \App\Models\Product::factory()->create([
+            'product_name' => 'Keyboard',
+            'quantity' => 69,
+        ]);
+
+        \App\Models\Product::factory()->create([
+            'product_name' => 'Monitor',
+            'quantity' => 105,
+        ]);
     }
 }
