@@ -43,7 +43,7 @@ class ProductsController extends Controller
     {
         $productID = $request->only('id');
 
-        Product::find($productID['productID'])->delete();
+        Product::find($productID['id'])->delete();
 
         return redirect()->back();
     }
