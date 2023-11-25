@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -9,17 +10,17 @@ class ProductsController extends Controller
 {
     public function addProduct(Request $request)
     {
-        $products = $request->validate(
+        $productInfo = $request->validate(
             [
                 'product_name' => 'required|min:2|string',
                 'product_quantity' => 'required|min:1|integer'
             ]
         );
 
-        DB::table('products')->insertGetId(
+        Product::create(
             [
-                'product_name' => $products['product_name'],
-                'quantity' => $products['product_quantity']
+                'product_name' => $productInfo['product_name'],
+                'quantity' => $productInfo['product_quantity']
             ]
         );
 
@@ -28,12 +29,12 @@ class ProductsController extends Controller
 
     public function editProduct(Request $request)
     {
-        $product = $request->only('productID', 'product_name', 'product_quantity');
-        DB::table('products')->where('id', $product['productID'])
-            ->update([
-                'product_name' => $product['product_name'],
-                'quantity' => $product['product_quantity']
-            ]);
+        $productInfo = $request->only('productID', 'product_name', 'product_quantity');
+
+        Product::find($productInfo['productID'])->update([
+            'product_name' => $productInfo['product_name'],
+            'quantity' => $productInfo['product_quantity']
+        ]);
 
         return redirect()->route('manage_products.page');
     }
@@ -42,7 +43,7 @@ class ProductsController extends Controller
     {
         $productID = $request->only('id');
 
-        DB::table('products')->where('id', $productID['id'])->delete();
+        Product::find($productID['productID'])->delete();
 
         return redirect()->back();
     }
