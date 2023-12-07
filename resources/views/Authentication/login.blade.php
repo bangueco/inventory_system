@@ -22,7 +22,7 @@
             </div>
             <div class="d-flex flex-column">
                 <label class="form-label" for="password">Password: </label>
-                <input class="form-control form-control-sm-2" style="width: 400px;" type="text" name="password" id="password">
+                <input class="form-control form-control-sm-2" style="width: 400px;" type="password" name="password" id="password">
             </div>
             @error('message')
             <p class="text text-danger"> {{ $message }} </p>
